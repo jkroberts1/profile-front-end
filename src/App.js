@@ -22,8 +22,8 @@ class App extends React.Component{
           <Header/>
           <BrowserRouter>
           <Switch>
-            <Route path='/profile/:userName' component={Profile} />
-            <Route path='/' component={Home} />
+            <Route path={"/profile/:userName"} component={Profile} />
+            <Route path={'/'} component={Home} />
           </Switch>
           </BrowserRouter>
           <Footer/>
