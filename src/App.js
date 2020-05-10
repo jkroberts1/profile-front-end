@@ -22,7 +22,7 @@ class App extends React.Component{
           <Header/>
           <BrowserRouter>
           <Switch>
-            <Route path={"/profile/:userName"} component={Profile} />
+            <Route path={"/profile/:userName"} render={(props) => <Profile {...props}/>} />
             <Route path={'/'} component={Home} />
           </Switch>
           </BrowserRouter>
