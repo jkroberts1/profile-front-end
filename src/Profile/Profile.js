@@ -4,6 +4,8 @@ import axios from "axios";
 import Header from '../Header.js';
 import Footer from '../Footer.js';
 import MetaTags from 'react-meta-tags';
+import { matchPath } from 'react-router';
+this.$axios({ url: 'items', baseURL: process.env.REACT_APP_BACK_END_URL });
 
 class Profile extends React.Component{
   constructor(props){
@@ -28,6 +30,7 @@ class Profile extends React.Component{
 };
   
   render() {
+
     const currentRoute= process.env.REACT_APP_FRONT_END_URL + this.props.location.pathname;
     return (
       <div className="Profile">
