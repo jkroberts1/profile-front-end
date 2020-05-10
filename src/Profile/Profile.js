@@ -5,7 +5,6 @@ import Header from '../Header.js';
 import Footer from '../Footer.js';
 import MetaTags from 'react-meta-tags';
 import { matchPath } from 'react-router';
-this.$axios({ url: 'items', baseURL: process.env.REACT_APP_BACK_END_URL });
 
 class Profile extends React.Component{
   constructor(props){
@@ -20,14 +19,12 @@ class Profile extends React.Component{
   {
     const userName = this.props.match.params.userName;
     const url = '/profile/' + userName;
-    console.log();
-    axios.get(url).then(response => {
-      console.log(response.data)
-      this.setState({
-          apiResponse: response.data
-      });
-  });
-};
+    console.log(process.env.REACT_APP_BACK_END_URL + url );
+    fetch(process.env.REACT_APP_BACK_END_URL + url )
+    .then(response => response.json())
+    .then(data => this.setState({apiResponse : data}));
+  }
+
   
   render() {
 
