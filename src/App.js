@@ -1,32 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Profile from './Profile/Profile.js';
+import axios from "axios";
+import Header from './Header.js';
+import Footer from './Footer.js';
+import Home from './Home.js';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+require('dotenv').config()
 
 class App extends React.Component{
   constructor(props){
-    super.(props);
-    
+    super(props);
+    this.state = 
+    {
+      apiResponse: "",
+    };
+  }
+  render() {
+    return (
+      <div className="App">
+          <Header/>
+          <BrowserRouter>
+          <Switch>
+            <Route path='/profile/:userName' component={Profile} />
+            <Route path='/' component={Home} />
+          </Switch>
+          </BrowserRouter>
+          <Footer/>
+      </div>
+    );
   }
 }
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
 export default App;
