@@ -53,7 +53,7 @@ class Profile extends React.Component{
       );
     }else{
       return(
-        <p>error</p>
+        <p></p>
       )
     }
   }
